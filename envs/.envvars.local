@@ -1,0 +1,10 @@
+## This file will be included by our bin/dev.sh
+## file and can be used to overload or add an ENV
+## vars before our app starts
+
+export DEBUGGER=false        # Options: [true, false]
+export NODE_ENV=production # Options: [local, development, staging, production]
+export HOST=localhost
+export PORT=8070
+export APIPORT=8069
+export APIHOST=genesis-cdb6a456.f71a5e36.svc.dockerapp.io

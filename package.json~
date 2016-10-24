@@ -1,0 +1,201 @@
+{
+  "name": "react-redux-universal-hot-example",
+  "description": "Example of an isomorphic (universal) webapp using react redux and hot reloading",
+  "author": "Erik Rasmussen <rasmussenerik@gmail.com> (http://github.com/erikras)",
+  "license": "MIT",
+  "version": "0.9.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erikras/react-redux-universal-hot-example"
+  },
+  "homepage": "https://github.com/erikras/react-redux-universal-hot-example",
+  "keywords": [
+    "react",
+    "isomorphic",
+    "universal",
+    "webpack",
+    "express",
+    "hot reloading",
+    "react-hot-reloader",
+    "redux",
+    "starter",
+    "boilerplate",
+    "babel"
+  ],
+  "main": "bin/server.js",
+  "scripts": {
+    "start": "concurrent --kill-others \"npm run start-prod\"",
+    "start-prod": "better-npm-run start-prod",
+    "build": "better-npm-run build",
+    "postinstall": "npm run build",
+    "lint": "eslint -c .eslintrc src api",
+    "start-debugger": "better-npm-run start-debugger",
+    "start-dev": "better-npm-run start-dev",
+    "start-dev-debug": "better-npm-run start-dev-debug",
+    "start-dev-debug-brk": "better-npm-run start-dev-debug-brk",
+    "watch-client": "better-npm-run watch-client",
+    "dev": "concurrent --kill-others \"npm run watch-client\" \"npm run start-dev\"",
+    "dev-debug": "concurrent --kill-others \"npm run start-debugger\" \"npm run watch-client\" \"npm run start-dev-debug\"",
+    "dev-debug-brk": "concurrent --kill-others \"npm run start-debugger\" \"npm run watch-client\" \"npm run start-dev-debug-brk\"",
+    "test": "echo 'WE NEED TESTS!!!'",
+    "test-node": "./node_modules/mocha/bin/mocha $(find api -name '*-test.js') --compilers js:babel-core/register",
+    "test-node-watch": "./node_modules/mocha/bin/mocha $(find api -name '*-test.js') --compilers js:babel-core/register --watch"
+  },
+  "betterScripts": {
+    "start-prod": {
+      "command": "node ./bin/server.js",
+      "env": {
+        "NODE_PATH": "./src"
+      }
+    },
+    "start-debugger": {
+      "command": "node-inspector"
+    },
+    "start-dev": {
+      "command": "node ./bin/server.js",
+      "env": {
+        "NODE_PATH": "./src"
+      }
+    },
+    "start-dev-debug": {
+      "command": "node --debug=5858 ./bin/server.js",
+      "env": {
+        "NODE_PATH": "./src"
+      }
+    },
+    "start-dev-debug-brk": {
+      "command": "node --debug-brk=5858 ./bin/server.js",
+      "env": {
+        "NODE_PATH": "./src"
+      }
+    },
+    "watch-client": {
+      "command": "node webpack/webpack-dev-server.js",
+      "env": {
+        "UV_THREADPOOL_SIZE": 100,
+        "NODE_PATH": "./src"
+      }
+    },
+    "build": {
+      "command": "webpack --verbose --colors --display-error-details --config webpack/prod.config.js",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  },
+  "dependencies": {
+    "babel-core": "*",
+    "babel-loader": "*",
+    "babel-plugin-add-module-exports": "*",
+    "babel-plugin-transform-decorators-legacy": "*",
+    "babel-plugin-transform-ensure-ignore": "*",
+    "babel-plugin-transform-react-display-name": "*",
+    "babel-plugin-transform-runtime": "*",
+    "babel-polyfill": "*",
+    "babel-preset-es2015": "*",
+    "babel-preset-react": "*",
+    "babel-preset-stage-0": "*",
+    "babel-register": "*",
+    "babel-runtime": "*",
+    "body-parser": "*",
+    "classnames": "*",
+    "component-cookie": "*",
+    "compression": "*",
+    "cookie-dough": "*",
+    "cookie-parser": "*",
+    "express": "*",
+    "express-session": "*",
+    "file-loader": "*",
+    "history": "*",
+    "hoist-non-react-statics": "*",
+    "http-proxy": "*",
+    "immutable": "*",
+    "invariant": "*",
+    "less": "*",
+    "less-loader": "*",
+    "lru-memoize": "*",
+    "map-props": "*",
+    "multireducer": "*",
+    "piping": "*",
+    "pretty-error": "*",
+    "react": "*",
+    "react-addons-css-transition-group": "*",
+    "react-bootstrap": "*",
+    "react-dom": "*",
+    "react-helmet": "*",
+    "react-inline-css": "*",
+    "react-redux": "*",
+    "react-router": "*",
+    "react-router-bootstrap": "*",
+    "react-router-redux": "*",
+    "redux": "*",
+    "redux-async-connect": "*",
+    "redux-form": "*",
+    "redux-thunk": "*",
+    "scroll-behavior": "*",
+    "serialize-javascript": "*",
+    "serve-favicon": "*",
+    "shortid": "*",
+    "socket.io": "*",
+    "socket.io-client": "*",
+    "statman-stopwatch": "*",
+    "superagent": "*",
+    "url-loader": "*",
+    "validate.js": "*",
+    "warning": "*",
+    "webpack-isomorphic-tools": "*"
+  },
+  "devDependencies": {
+    "autoprefixer-loader": "*",
+    "babel-eslint": "*",
+    "babel-plugin-react-transform": "*",
+    "babel-plugin-remove-webpack": "*",
+    "babel-plugin-typecheck": "*",
+    "better-npm-run": "*",
+    "bootstrap-sass": "*",
+    "bootstrap-sass-loader": "*",
+    "chai": "*",
+    "clean-webpack-plugin": "*",
+    "concurrently": "*",
+    "css-loader": "*",
+    "eslint": "*",
+    "eslint-config-airbnb": "*",
+    "eslint-loader": "*",
+    "eslint-plugin-import": "*",
+    "eslint-plugin-react": "*",
+    "extract-text-webpack-plugin": "*",
+    "font-awesome": "*",
+    "font-awesome-webpack": "*",
+    "json-loader": "*",
+    "karma": "*",
+    "karma-cli": "*",
+    "karma-mocha": "*",
+    "karma-mocha-reporter": "*",
+    "karma-phantomjs-launcher": "*",
+    "karma-sourcemap-loader": "*",
+    "karma-webpack": "*",
+    "mocha": "*",
+    "node-sass": "*",
+    "phantomjs": "*",
+    "phantomjs-polyfill": "*",
+    "react-a11y": "*",
+    "react-addons-test-utils": "*",
+    "react-transform-catch-errors": "*",
+    "react-transform-hmr": "*",
+    "redbox-react": "*",
+    "redux-devtools": "*",
+    "redux-devtools-dock-monitor": "*",
+    "redux-devtools-log-monitor": "*",
+    "sass-loader": "*",
+    "sinon": "*",
+    "strip-loader": "*",
+    "style-loader": "*",
+    "timekeeper": "*",
+    "webpack": "*",
+    "webpack-dev-middleware": "*",
+    "webpack-hot-middleware": "*"
+  },
+  "engines": {
+    "node": "4.1.1"
+  }
+}
